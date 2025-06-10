@@ -1,0 +1,4 @@
+/*    /index.html   200
+```    *   `/*`: Aceasta înseamnă "prinde orice cale/URL".
+*   `/index.html`: Redirecționează cererea către fișierul `index.html` din rădăcina directorului tău de publicare.
+*   `200`: Returnează un cod de status HTTP 200 (OK). Acest lucru este important pentru ca browserul și motoarele de căutare să înțeleagă că nu este o eroare 301 (redirect permanent), ci o rescriere internă a URL-ului pentru a servi conținutul corect.
