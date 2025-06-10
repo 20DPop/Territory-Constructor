@@ -37,12 +37,9 @@ const MapView = ({ geometry }) => {
 // Component to show user location and handle location permissions
 const LocationMarker = ({ onLocationFound }) => {
   const [position, setPosition] = useState(null);
-  const [locationError, setLocationError] = useState(null);
   const map = useMap();
 
-  const handleLocate = () => {
-    map.locate({ setView: true });
-  };
+
 
   useEffect(() => {
     map.on('locationfound', (e) => {
@@ -52,7 +49,6 @@ const LocationMarker = ({ onLocationFound }) => {
 
     map.on('locationerror', (e) => {
       console.error(e);
-      setLocationError('Could not find your location');
     });
 
     return () => {
