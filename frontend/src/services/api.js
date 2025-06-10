@@ -25,40 +25,37 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// User API calls
 export const loginUser = (email, password) => {
-  return api.post('/users/login', { email, password }); // Acestea vor folosi baseURL corect acum
+  return api.post('/api/users/login', { email, password }); // Modificat
 };
 
 export const registerUser = (userData) => {
-  return api.post('/users', userData); // Acestea vor folosi baseURL corect acum
+  return api.post('/api/users', userData); // Modificat (sau '/api/users/' dacă backend-ul e strict cu slash-ul final)
 };
 
-// ... restul funcțiilor tale API rămân la fel ...
-
 export const getUserProfile = () => {
-  return api.get('/users/profile');
+  return api.get('/api/users/profile'); // Modificat
 };
 
 // Territory API calls
 export const createTerritory = (territoryData) => {
-  return api.post('/territories', territoryData);
+  return api.post('/api/territories', territoryData); // Modificat
 };
 
 export const getTerritories = () => {
-  return api.get('/territories');
+  return api.get('/api/territories'); // Modificat
 };
 
 export const getTerritoryById = (id) => {
-  return api.get(`/territories/${id}`);
+  return api.get(`/api/territories/${id}`); // Modificat
 };
 
 export const updateTerritory = (id, territoryData) => {
-  return api.put(`/territories/${id}`, territoryData);
+  return api.put(`/api/territories/${id}`, territoryData); // Modificat
 };
 
 export const deleteTerritory = (id) => {
-  return api.delete(`/territories/${id}`);
+  return api.delete(`/api/territories/${id}`); // Modificat
 };
 
 export default api;
