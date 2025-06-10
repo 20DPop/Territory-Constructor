@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: API_BASE_URL, 
   headers: {
     'Content-Type': 'application/json',
   },
@@ -15,10 +15,10 @@ api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('userToken');
     if (token) {
-      console.log('Adding auth token to request');
+      // console.log('Adding auth token to request'); // Poți decomenta pentru debugging
       config.headers['Authorization'] = `Bearer ${token}`;
     } else {
-      console.warn('No auth token found - request might fail if authentication is required');
+      // console.warn('No auth token found - request might fail if authentication is required'); // Poți decomenta pentru debugging
     }
     return config;
   },
@@ -27,12 +27,14 @@ api.interceptors.request.use(
 
 // User API calls
 export const loginUser = (email, password) => {
-  return api.post('/users/login', { email, password });
+  return api.post('/users/login', { email, password }); // Acestea vor folosi baseURL corect acum
 };
 
 export const registerUser = (userData) => {
-  return api.post('/users', userData);
+  return api.post('/users', userData); // Acestea vor folosi baseURL corect acum
 };
+
+// ... restul funcțiilor tale API rămân la fel ...
 
 export const getUserProfile = () => {
   return api.get('/users/profile');
