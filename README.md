@@ -1,5 +1,3 @@
-Territory Constructor
-Territory Constructor este o aplicație web full-stack ce permite utilizatorilor să creeze, vizualizeze și consideri necesar.
 # Territory Constructor
 
 Territory Constructor este o aplicație web full-stack ce gestioneze teritorii geografice personalizate. Utilizatorii se pot înregistra, autentifica și apoi interacționa cu permite utilizatorilor să creeze, vizualizeze, și gestioneze teritorii geografice pe o hartă interactivă. Utilizatorii se pot înregistra, autentifica, și apoi pot defini teritorii folosind unelte deSig o hartă pentru a defini și analiza diverse regiuni.
